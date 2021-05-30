@@ -11,9 +11,11 @@
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "core-js": "^3.9.1",
+    "ipfs": "^0.55.2",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.11.3"
+    "@nuxtjs/vuetify": "^1.11.3",
+    "node-sass": "^6.0.0"
   }
 }

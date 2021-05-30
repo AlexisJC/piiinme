@@ -17,7 +17,8 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { ref: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons'}
     ]
   },
 
@@ -27,6 +28,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/ipfs.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,12 +53,14 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
+        light: {
+          primary: '#E5989B',
+          background: '#f8edeb',
+          accent: '#ffcdb2',
+          secondary: '#b5838d',
+          tertiary: '#6D6875',
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
