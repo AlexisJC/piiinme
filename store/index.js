@@ -12,13 +12,13 @@ export default {
   },
   actions: {
     async pin ({ state, commit }, dapp) {
-      console.log(await this.$ipfs.pin.add(dapp.cid))
+      this.$ipfs.pin.add(dapp.cid)
       for (const service of state.services) {
         const result = await RemoteServiceAdd(service, dapp)
         console.log(result)
       }
       const pins = [...state.pins]
-      pins.push(cid)
+      pins.push(dapp.cid)
       commit('setPins', pins)
       for await (const { cid, type } of this.$ipfs.pin.ls()) {
         console.log({ cid, type })

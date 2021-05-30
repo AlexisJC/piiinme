@@ -1,16 +1,14 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" class="my-10">
+  <v-scroll-y-transition tag="v-row" group mode="out-in">
+    <v-col cols="12" class="my-10" key="title">
       <h1 class="text-h4 white--text font-weight-bold" style="font-family: 'Poppins', sans-serif!important;">
         Help to host the open web!
       </h1>
     </v-col>
-    <v-col cols="12">
+    <v-col cols="12" key="search">
       <v-text-field dark v-model="search" prepend-inner-icon="mdi-file-search" placeholder="Search CID, name, description..." filled></v-text-field>
     </v-col>
-    <v-col cols="12">
-      <v-scroll-y-transition tag="v-row" group mode="out-in">
-        <v-col tag="v-col" cols="12" md="4" v-for="dapp in dappsFiltered" :key="dapp.slug">
+    <v-col tag="v-col" cols="12" md="4" v-for="dapp in dappsFiltered" :key="dapp.slug">
           <v-card>
             <v-card-title>
               <span>{{ dapp.title }}</span>
@@ -38,10 +36,7 @@
             </v-card-actions>
           </v-card>
         </v-col>
-      </v-scroll-y-transition>
-      
-    </v-col>
-  </v-row>
+  </v-scroll-y-transition>
 </template>
 
 <script>
